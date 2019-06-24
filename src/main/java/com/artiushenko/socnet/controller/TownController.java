@@ -1,31 +1,30 @@
 package com.artiushenko.socnet.controller;
 
+import com.artiushenko.socnet.entity.FamilyStatus;
 import com.artiushenko.socnet.entity.Town;
-import com.artiushenko.socnet.entity.User;
+import com.artiushenko.socnet.service.FamilyStatusService;
 import com.artiushenko.socnet.service.TownService;
-import com.artiushenko.socnet.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/town")
+public class TownController {
     @Autowired
-    private UserService service;
+    private TownService service;
 
     @GetMapping(value = "/all")
-    public List<User> getAll(){
-        List<User> users = service.findAll();
-        return users;
+    public List<Town> getAll(){
+        List<Town> towns = service.findAll();
+        return towns;
     }
 
     @PostMapping
-    public User create(@RequestBody User user) {
-        return service.create(user);
+    public Town create(@RequestBody Town town) {
+        return service.create(town);
     }
 
     @CrossOrigin
@@ -36,8 +35,8 @@ public class UserController {
 
     @CrossOrigin
     @GetMapping("/select/{id}")
-    public User selectOne(@PathVariable("id") int id){
-        User user = service.select(id);
-        return user;
+    public Town selectOne(@PathVariable("id") int id){
+        Town town = service.select(id);
+        return town;
     }
 }
