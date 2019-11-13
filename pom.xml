@@ -16,7 +16,7 @@
         <!-- Spring -->
         <org.springframework-version>5.1.7.RELEASE</org.springframework-version>
         <!--Jackson-->
-        <jackson.databind-version>2.9.9</jackson.databind-version>
+        <jackson.databind-version>2.9.10.1</jackson.databind-version>
     </properties>
 
     <dependencies>
